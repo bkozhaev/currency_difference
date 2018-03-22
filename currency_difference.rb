@@ -17,18 +17,22 @@ end
 
 usd_vs_rub = usd.value.sub(',','.').to_f
 
+puts "\nКурс доллара США к рублю сегодня: #{usd}"
+
 puts "\nСколько у вас рублей?\n"
 
 rub_amount = STDIN.gets.to_i
 
-puts "\nСколько у вас долларов?\n"
+puts "Сколько у вас долларов?\n"
 
 usd_amount = STDIN.gets.to_i
 
 usd_to_rub = usd_vs_rub*usd_amount
 
 if usd_to_rub > rub_amount
-  puts "\nВам надо продать #{(((usd_to_rub - rub_amount)/2)/usd_vs_rub).round(2)} дол."
+  puts "Для того чтобы уровнять сумму рублей и долларов США"
+  puts "Вам необходимо продать #{(((usd_to_rub - rub_amount)/2)/usd_vs_rub).round(2)} дол."
 else
-  puts "\nВам надо продать #{((rub_amount - usd_to_rub)/2).round(2)} руб."
+  puts "Для того чтобы уровнять сумму рублей и долларов США"
+  puts "Вам необходимо продать #{((rub_amount - usd_to_rub)/2).round(2)} руб."
 end
